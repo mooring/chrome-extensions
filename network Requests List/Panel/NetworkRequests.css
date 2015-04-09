@@ -20,6 +20,11 @@ body {
 .preprocessed-urls {
 	z-index: 1;
 	border: 1px solid #e1e1e1;
+	max-width: 99%;
+ 	overflow:hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+ 	word-wrap: break-word;
 }
 
 .preprocessed-urls a {
@@ -101,6 +106,7 @@ ol.newspaper li {
 	padding: 5px;
 	background-color: #eee;
 	vertical-align: top;
+	text-overflow: ellipsis;
 }
 
 ol.newspaper li:nth-child(2n) {
@@ -131,4 +137,10 @@ ol.newspaper li:hover {
 	color: red;
 	font-weight: 600;
 	font-size: 14px;
+}
+.previewImg{
+	position: absolute;
+	z-index: 1000;
+	right:0;
+	bottom:0;
 }
