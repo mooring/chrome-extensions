@@ -1,20 +1,6 @@
 (function() {
 	var curList = [],
 		isFiltering = false;
-	chrome.devtools = chrome.devtools || {
-		inspectedWindow: {
-			reload: function() {},
-			getResources: function() {}
-		},
-		network: {
-			onNavigated: {
-				addListener: function() {}
-			},
-			onRequestFinished: {
-				addListener: function() {}
-			}
-		}
-	};
 
 	function initEvents() {
 		var doc = document;
@@ -23,6 +9,10 @@
 		doc.querySelector('#filterText').addEventListener('keyup', filterList);
 		doc.querySelector('#filterText').addEventListener('focus', setFilter);
 		doc.querySelector('#filterText').addEventListener('blur', blurFilter);
+		doc.querySelector('#isRegEx').addEventListener('click', function() {
+			setFilter();
+			filterList();
+		});
 		doc.querySelector('button.copy-button').addEventListener('click', copyList);
 		doc.querySelector('button.clear-button').addEventListener('click', resetList);
 		doc.querySelector('button.reload-button').addEventListener('click', function() {
