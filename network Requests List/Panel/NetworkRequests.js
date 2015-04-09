@@ -9,10 +9,7 @@
 		doc.querySelector('#filterText').addEventListener('keyup', filterList);
 		doc.querySelector('#filterText').addEventListener('focus', setFilter);
 		doc.querySelector('#filterText').addEventListener('blur', blurFilter);
-		doc.querySelector('#isRegEx').addEventListener('click', function() {
-			setFilter();
-			filterList();
-		});
+		doc.querySelector('#isRegEx').addEventListener('click', checkFilter);
 		doc.querySelector('button.copy-button').addEventListener('click', copyList);
 		doc.querySelector('button.clear-button').addEventListener('click', resetList);
 		doc.querySelector('button.reload-button').addEventListener('click', function() {
@@ -60,6 +57,20 @@
 		url = url.replace(/[\"\'<>]+/g, '');
 		li.innerHTML = '<a  href="' + url + '" target="_blank">' + url + '</a>';
 		return li;
+	}
+
+	function checkFilter(evt) {
+		var tar = evt.target,
+			t = document.querySelector('#filterText').value;
+		if (t.length == 0) {
+			return;
+		}
+		if (tar.checked) {
+			setFilter();
+		} else {
+			blurFilter();
+		}
+		filterList();
 	}
 
 	function setFilter() {
