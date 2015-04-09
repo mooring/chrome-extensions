@@ -1,0 +1,15 @@
+{
+	"name" : "Network Requests",
+	"version" : "2.1",
+	"description" : "Network Requests for current Tab",
+	"devtools_page" : "networkrequests.html",
+	"manifest_version" : 2,
+	"web_accessible_resources" : ["*"],
+	"permissions" : [
+		"tabs",
+		"clipboardWrite",
+		"http://*/*",
+		"https://*/*",
+		"webRequest"
+	]
+}
