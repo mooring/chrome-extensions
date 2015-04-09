@@ -1,0 +1,29 @@
+<html>
+<head>
+  <link rel='stylesheet' href='NetworkRequests.css'>
+</head>
+<body>
+  <div class="header">
+    <h2 class='newspaper' align="bottom">Network Requests List Monitor for Developers <a class="github" href="https://github.com/mooring/chrome">source on GitHub</a></h2>
+  </div>
+  <div class="buttons">
+    <button class='refresh-button operate-btn' title="Refresh Resources">Refresh</button>
+    <button class='clear-button operate-btn' title="Clear List">Clear</button>
+    <button class='copy-button operate-btn' title="Copy List">Copy</button>
+    <button class='reload-button operate-btn' title="Reload Page">Reload</button>
+    <div class="filter">
+      <input type="checkbox"/>
+      RegEx
+      <input type="text" name="" id="" placeholder="Filter"/>
+    </div>
+  </div>
+
+  <ol class='newspaper preprocessed-urls'>
+      <li><a href="">Refresh to update new requests list</a></li>
+  </ol>
+  <div class="tips" id="tips"></div>
+  <textarea id="clipData" rows="1" cols="1"></textarea>
+  <script src="InspectedWindowLoadMonitor.js"></script>
+  <script src="NetworkRequests.js"></script>
+</body>
+</html>
