@@ -54,6 +54,7 @@ body {
 .filter {
 	float: right;
 	font-size: 12px;
+	padding-right: 3em;
 }
 
 .filter input[type=text] {
