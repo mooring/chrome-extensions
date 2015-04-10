@@ -1,5 +1,7 @@
 body {
-	margin: 20px;
+	margin: 0;
+	padding:0;
+	overflow-x:hidden;
 }
 
 .newspaper {
@@ -12,7 +14,7 @@ body {
 	font-size: 12px;
 	position: fixed;
 	z-index: 100;
-	width: 96%;
+	width: 100%;
 	top: 0;
 	left: 0;
 	padding: 15px;
@@ -27,10 +29,9 @@ body {
 .preprocessed-urls {
 	position: absolute;
   	top: 85px;
-  	width: 100%;
 	z-index: 1;
 	border: 1px solid #e1e1e1;
-	max-width: 99%;
+	width: 100%;
  	overflow:hidden;
 	text-overflow: ellipsis;
 	word-break: break-all;
