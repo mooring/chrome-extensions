@@ -2,17 +2,20 @@
 	var curList = [],
 		isFiltering = false;
 
+	function addEvt(sel, evt, func) {
+		document.querySelector(sel).addEventListener(evt, func);
+	}
+
 	function initEvents() {
-		var doc = document;
 		freshList();
-		doc.querySelector('button.refresh-button').addEventListener('click', freshList);
-		doc.querySelector('#filterText').addEventListener('keyup', filterList);
-		doc.querySelector('#filterText').addEventListener('focus', setFilter);
-		doc.querySelector('#filterText').addEventListener('blur', blurFilter);
-		doc.querySelector('#isRegEx').addEventListener('click', checkFilter);
-		doc.querySelector('button.copy-button').addEventListener('click', copyList);
-		doc.querySelector('button.clear-button').addEventListener('click', resetList);
-		doc.querySelector('button.reload-button').addEventListener('click', function() {
+		addEvt('button.refresh-button', 'click', freshList);
+		addEvt('#filterText', 'keyup', filterList);
+		addEvt('#filterText', 'focus', setFilter);
+		addEvt('#filterText', 'blur', blurFilter);
+		addEvt('#isRegEx', 'click', checkFilter);
+		addEvt('button.copy-button', 'click', copyList);
+		addEvt('button.clear-button', 'click', resetList);
+		addEvt('button.reload-button', 'click', function() {
 			resetList();
 			chrome.devtools.inspectedWindow.reload({});
 		});
@@ -27,21 +30,24 @@
 	}
 
 	function showTips(tips) {
-		var doc = document.querySelector('#tips');
-		doc.innerHTML = tips;
+		document.querySelector('#tips').innerHTML = tips;
 	}
 
 	function copyList() {
 		var dom = document.querySelector('#clipData'),
+			doc = document.querySelector('#tips'),
 			list = [],
 			filter = document.querySelectorAll('.preprocessed-urls li');
+		if (filter.length == 0) {
+			showTips('No matched url copied.');
+			return;
+		}
 		for (var i = 0, il = filter.length; i < il; i++) {
 			list.push(filter[i].textContent);
 		}
 		dom.value = list.join("\n");
 		dom.select();
-		var res = document.execCommand("copy"),
-			doc = document.querySelector('#tips');
+		var res = document.execCommand("copy");
 		if (res) {
 			showTips(list.length + ' Resource urls have been Copied to your ClipBoard, Enjoy it');
 		} else {
