@@ -9,4 +9,6 @@ https://chrome.google.com/webstore/detail/network-requests-monitor/gcdgbbcmdelmc
 
 ![screenshot](https://raw.githubusercontent.com/mooring/chrome-extensions/master/Network%20Requests%20Monitor/resources/screenshot2.png)
 
-[MIT]
+Released under [MIT](http://rem.mit-license.org/) LICENSE.
+
+♥ made by @[mooring](https://github.com/mooring) & @[hzlzh](https://github.com/hzlzh)
