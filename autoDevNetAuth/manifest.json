@@ -1,0 +1,20 @@
+{
+  "name": "autoAuth",
+  "description": "You Known it if u are in devnet",
+  "icons": { "128": "icon.png" },
+  "content_scripts":[
+   {
+        "matches": ["http://*/*"],
+        "all_frames": false,
+        "run_at":"document_end",
+        "js": ["audoDev.js"]
+    }
+  ],
+  "permissions": [
+        "tabs",
+        "activeTab",
+        "http://*/*"
+  ],
+  "version": "1.0",
+  "manifest_version": 2
+}
