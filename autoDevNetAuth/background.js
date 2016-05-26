@@ -17,8 +17,7 @@ function touchTab(tabId, info){
     }
 }
 function networkError(detail){
-    var authurl = 'http://your-web-auth.domain.com/auth.php?',
-        param = 'jump='
+    var jumpurl = 'http://your-web-auth.domain.com/auth.php'
     if(detail.method =='GET' && detail.error == 'net::ERR_TUNNEL_CONNECTION_FAILED'){
         if(!tabTouched){
             chrome.tabs.onUpdated.addListener(touchTab);
@@ -26,7 +25,6 @@ function networkError(detail){
         }
         chrome.tabs.query({active: true, currentWindow: true, highlighted:true}, function(tabs) {
             activeTabId = tabs && tabs.length>0 ? tabs[0].id : null;
-            var jumpurl = authurl + param + encodeURIComponent(detail.url);
             chrome.tabs.create({url:jumpurl, active:false});
         });
     }
