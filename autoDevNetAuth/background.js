@@ -4,13 +4,11 @@ function touchTab(tabId, info){
     if(info.status && info.status == 'complete'){
         setTimeout(function(){
             if(activeTabId != null){
-                chrome.tabs.highlight({tabs:[activeTabId);
-                chrome.tabs.reload(activeTabId);
-                chrome.tabs.remove([tabId]);
-                chrome.tabs.executeScript(tabId, {
-                    code:'setTimeout(function(){ window.close();},3000);',
-                    runAt:'document_end'
-                });
+                try{
+                    chrome.tabs.highlight({tabs:[activeTabId]});
+                    chrome.tabs.reload(activeTabId);
+                    chrome.tabs.remove([tabId]);
+                }catch(e){}
                 activeTabId = null;
             }
         },1000);
