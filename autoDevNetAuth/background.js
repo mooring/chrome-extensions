@@ -4,7 +4,7 @@ function touchTab(tabId, info){
     if(info.status && info.status == 'complete'){
         setTimeout(function(){
             if(activeTabId != null){
-                chrome.tabs.highlight(activeTabId);
+                chrome.tabs.highlight({tabs:[activeTabId);
                 chrome.tabs.reload(activeTabId);
                 chrome.tabs.remove([tabId]);
                 chrome.tabs.executeScript(tabId, {
@@ -13,7 +13,7 @@ function touchTab(tabId, info){
                 });
                 activeTabId = null;
             }
-        },3000);
+        },1000);
     }
 }
 function networkError(detail){
@@ -29,6 +29,9 @@ function networkError(detail){
         });
     }
 }
+chrome.webRequest.onErrorOccurred.addListener(networkError,{
+    urls:['<all_urls>'],types:['main_frame']
+});
 function tabActived(info){
     chrome.tabs.get(info.tabId,function(tab){
         if(tab.status == 'complete' && tab.title.indexOf('申请临时访问') != -1){
@@ -36,7 +39,4 @@ function tabActived(info){
         }
     });
 }
-chrome.webRequest.onErrorOccurred.addListener(networkError,{
-    urls:['<all_urls>'],types:['main_frame','sub_frame']
-});
 //chrome.tabs.onActivated.addListener(tabActived);
