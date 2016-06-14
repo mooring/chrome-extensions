@@ -1,5 +1,6 @@
 {
   "name": "autoAuth",
+  "version": "1.5",
   "description": "You Known it if u are in devnet",
   "icons": { "128": "icon.png" },
   "content_scripts":[
@@ -19,6 +20,5 @@
         "webRequest",
         "<all_urls>"
   ],
-  "version": "1.3",
   "manifest_version": 2
 }
