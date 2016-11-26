@@ -19,50 +19,59 @@
       </div>
     </div>
   </div>
-  
   <ol class='newspaper preprocessed-urls'>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      <li><a href="#">Refresh to update new requests list</a></li>
-      
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
+      <li><a class="inspector" href="javascript:;">Inspector</a> <a href="#">Refresh to update new requests list</a></li>
   </ol>
+  <div class="details">
+    <header class="detail_header">
+        <span class="close"> X </span>
+        <ul class="detail_category">
+            <li tar="detail_request" class="current">Request</li>
+            <li tar="detail_response">Response</li>
+            <li tar="detail_additional">Additional Info</li>
+        </ul>
+    </header>
+    <section class="detail_request">
+        <table cellspacing="0">
+            <caption>Request Details</caption>
+            <thead>
+                <tr><th colspan="2" class="section"></th></tr>
+                <tr><td colspan="2" class="val"></td></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <section class="detail_response" style="display:none">
+        <table cellspacing="0">
+            <caption>Response Details</caption>
+            <thead>
+                <tr><th colspan="2" class="section"></th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <section class="detail_additional" style="display:none">
+        <table cellspacing="0">
+            <caption>Additional Information</caption>
+            <tbody></tbody>
+        </table>
+    </section>
+  </div>
   <div class="tips" id="tips"></div>
   <textarea id="clipData" rows="1" cols="1"></textarea>
   <script src="InspectedWindowLoadMonitor.js"></script>
