@@ -271,7 +271,7 @@ ol.newspaper li:hover, .details table>tbody>tr:hover, .details table td.section{
     clear:both;
 }
 .details table td div.post_info:nth-child(odd){
-     background-color: #ddeeff;
+     background-color: #efefef;
 }
 .details table td div.post_info:nth-child(even){
     background-color: #fff;
