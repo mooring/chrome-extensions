@@ -1,6 +1,6 @@
 {
 	"name": "Network Requests Monitor",
-	"version": "3.1",
+	"version": "3.2",
 	"description": "Network Requests Monitor for Developers",
 	"devtools_page": "networkrequests.html",
 	"manifest_version": 2,
