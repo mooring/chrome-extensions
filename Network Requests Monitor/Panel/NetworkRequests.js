@@ -128,13 +128,6 @@
                     for(var j=0,jl=list.length; j<jl; j++){
                         var item = list[j];
                         if(item.name && item.value){
-                            if(key == 'cookies'){
-                                item.value += [
-                                    item.expires ? 'expires: '+ item.expires : '',
-                                    item.httpOnly ? 'httpOnly' : '',
-                                    item.secure ? 'SecurityOnly': ''
-                                ].join(' ☉ ')
-                            }
                             html.push(formatTpl(dtpl, item));
                         }
                     }
