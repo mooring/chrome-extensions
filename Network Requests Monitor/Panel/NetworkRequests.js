@@ -72,7 +72,9 @@
     function formatTpl(tpl, obj) {
         tpl = tpl + '';
         return tpl.replace(/\{(\w+)\}/g, function (m, n) {
-            return obj[n] !== undefined ? obj[n].toString() : m;
+            return obj[n] !== undefined 
+                ? obj[n].toString().replace(/</g,'&lt;').replace(/>/g,'&gt;')
+                : (''+m).replace(/</g,'&lt;').replace(/>/g,'&gt;');
         });
     }
     function renderRequestHead(dom, obj){
@@ -92,23 +94,6 @@
         }
     }
     /*
-        cookie =  {
-                "expires": null,
-                "httpOnly": false,
-                "name": "pgv_pvi",
-                "secure": false,
-                "value": "6767947776"
-            }
-        postData = {
-            "mimeType": "application/x-www-form-urlencoded",
-            "params": [
-                {
-                    "name": "Referer",
-                    "value": "http%3A%2F%2Fgame.weixin.qq.com%2Fcgi-bin%2Fh5%2Fstatic%2Fgamecenter%2Findex.html%3Fabt%3D9%26key%3Dbd87ffcc8977cd93c010452f73753a84a2255363d22845bc7bccea7517b985f445a579c06fbabca36358a0e2ea3d9ec2d76173c5a53c66f8985ba60b38a44d13d880c71cffe2576d6c0c18f3ce5468bf%26uin%3DNjYwNDMxNDU%253D%26pass_ticket%3DGBYIK6S7l1wc6Ri6vcL7SLXW22XMQ8NLwLYEc8qwEVg%253D"
-                }
-            ],
-            "text": "Referer=http%3A%2F%2Fgame.weixin.qq.com%2Fcgi-bin%2Fh5%2Fstatic%2Fgamecenter%2Findex.html%3Fabt%3D9%26key%3Dbd87ffcc8977cd93c010452f73753a84a2255363d22845bc7bccea7517b985f445a579c06fbabca36358a0e2ea3d9ec2d76173c5a53c66f8985ba60b38a44d13d880c71cffe2576d6c0c18f3ce5468bf%26uin%3DNjYwNDMxNDU%253D%26pass_ticket%3DGBYIK6S7l1wc6Ri6vcL7SLXW22XMQ8NLwLYEc8qwEVg%253D"
-    }
     */
     function renderPostData(tpl, data){
         var html = [],
@@ -131,7 +116,7 @@
     }
     function renderSections(dom, res){
         var html = [],
-            sections = ['content', 'headers', 'queryString', 'cookies', 'postData'],
+            sections = ['content', 'headers', 'queryString', 'postData','cookies'],
             tpl      = '<tr><td colspan="2" class="section">{header}</td></tr>',
             dtpl     = '<tr><td class="key">{name}</td><td class="val">{value}</td></tr>';
         for(var i=0, il=sections.length; i<il; i++){
