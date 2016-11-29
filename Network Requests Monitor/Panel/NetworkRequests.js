@@ -72,7 +72,7 @@
     function formatTpl(tpl, obj) {
         tpl = tpl + '';
         return tpl.replace(/\{(\w+)\}/g, function (m, n) {
-            return obj[n] !== undefined 
+            return obj[n] !== undefined
                 ? obj[n].toString().replace(/</g,'&lt;').replace(/>/g,'&gt;')
                 : (''+m).replace(/</g,'&lt;').replace(/>/g,'&gt;');
         });
@@ -107,7 +107,7 @@
                         subtable.push(formatTpl(itpl, item));
                     }
                 }
-                html.push(formatTpl(tpl,{name:key, value: subtable.join('')}));
+                html.push('<tr><td class="key">' + key.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</td><td class="val">'+subtable.join('')+'</td></tr>');
             }else{
                 html.push(formatTpl(tpl,{name:key, value: data[key]}));
             }
