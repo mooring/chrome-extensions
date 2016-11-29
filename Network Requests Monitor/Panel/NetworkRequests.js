@@ -129,11 +129,11 @@
                         var item = list[j];
                         if(item.name && item.value){
                             if(key == 'cookies'){
-                                item.value += '<strong>'+[
+                                item.value += [
                                     item.expires ? 'expires: '+ item.expires : '',
                                     item.httpOnly ? 'httpOnly' : '',
                                     item.secure ? 'SecurityOnly': ''
-                                ].join(' ')+'</strong>'
+                                ].join(' ☉ ')
                             }
                             html.push(formatTpl(dtpl, item));
                         }
