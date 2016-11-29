@@ -127,7 +127,6 @@
                 html.push(formatTpl(tpl,{name:key, value: data[key]}));
             }
         }
-        alert(html.join('\n'));
         return html.join('');
     }
     function renderSections(dom, res){
